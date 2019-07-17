@@ -1,13 +1,17 @@
 package com.example.demo.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-@Entity
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Inputs {
-	@Id
+
 	private int  version;
 	private String basepath;
 	private String title;
 	private String host;
+	
 	public int getVersion() {
 		return version;
 	}
@@ -32,12 +36,11 @@ public class Inputs {
 	public void setHost(String host) {
 		this.host = host;
 	}
-	@Override
-	public String toString() {
-		return "Inputs [version=" + version + ", basepath=" + basepath + ", title=" + title + ", host=" + host + "]";
-	}
-	
-	
+	/*
+	 * @Override public String toString() { return "Inputs [version=" + version +
+	 * ", basepath=" + basepath + ", title=" + title + ", host=" + host + "]"; }
+	 * 
+	 */
 	
 	
 	
