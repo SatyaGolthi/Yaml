@@ -7,10 +7,19 @@ This schema is located at C:\Projects\XML\Projects\XMLSpyProject\Schema\BasicExa
     <xs:element name="Book">
         <xs:complexType>
             <xs:sequence>
-            <xs:element name="Author" type="xs:string"/>
+            <xs:element name="Author" type="xs:string" />
                 <xs:element name="Title" type="xs:string"/>
                 <xs:element name="Subject" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:element name = "contact">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name = "name" type = "xs:string" />
+            <xs:element name = "company" type = "xs:string" />
+            <xs:element name = "phone" type = "xs:int" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
 </xs:schema>

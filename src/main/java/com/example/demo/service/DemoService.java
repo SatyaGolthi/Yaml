@@ -36,9 +36,36 @@ public String getDetails(Inputs input) throws IOException {
 		bufferwriter.newLine();
 		bufferwriter.write("title:"+ input.getTitle());
 		bufferwriter.newLine();
+		bufferwriter.write("path:"+ input.getPath());
+		bufferwriter.newLine();
+		bufferwriter.newLine();
+		
+		
 	
+Set<Class<? extends Object>> object = getPojo();
+		
+		for(Class<? extends Object> cls : object) {
+			bufferwriter.write("class:"+ cls.getName().split(cls.getPackage().toString().split(" ")[1]+".")[1]);
+			bufferwriter.newLine();
+			bufferwriter.write("\t \t \t Parameters:");
+			bufferwriter.newLine();
+			 for(Field field:cls.getDeclaredFields()) {
+					bufferwriter.write("\t \t \t \t name:"+ field.getName());
+					bufferwriter.newLine();
+					bufferwriter.write("\t \t \t \t type:"+ field.getType().getSimpleName());
+					bufferwriter.newLine();
+					bufferwriter.newLine();
+			 
+			 }
+		}
 		bufferwriter.close();
 		return "Details added Successfully";
+	}
+
+public Set<Class<? extends Object>> getPojo() {
+	 Reflections reflections = new Reflections("com.example.xml",new SubTypesScanner(false));
+	 return reflections.getSubTypesOf(Object.class);
+
 }
  
 }

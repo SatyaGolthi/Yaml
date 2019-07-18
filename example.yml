@@ -1,4 +1,26 @@
 version:2
-host:hjhgdaja
-basepath:Small
-title:Red
+host:localhost
+basepath:/v1
+title:Demo
+path:/userdetails
+
+class:Book
+	 	 	 	 name:author
+	 	 	 	 type:String
+
+	 	 	 	 name:title
+	 	 	 	 type:String
+
+	 	 	 	 name:subject
+	 	 	 	 type:String
+
+class:Contact
+	 	 	 	 name:name
+	 	 	 	 type:String
+
+	 	 	 	 name:company
+	 	 	 	 type:String
+
+	 	 	 	 name:phone
+	 	 	 	 type:int
+

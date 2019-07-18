@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Author" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Title" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Subject" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,90 +38,81 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "author",
-    "title",
-    "subject"
+    "name",
+    "company",
+    "phone"
 })
-@XmlRootElement(name = "Book")
-public class Book {
+@XmlRootElement(name = "contact")
+public class Contact {
 
-    @XmlElement(name = "Author", required = true)
-    protected String author;
-    @XmlElement(name = "Title", required = true)
-    protected String title;
-    @XmlElement(name = "Subject", required = true)
-    protected String subject;
+    @XmlElement(required = true)
+    protected String name;
+    @XmlElement(required = true)
+    protected String company;
+    protected int phone;
 
     /**
-     * Gets the value of the author property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAuthor() {
-        return author;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the author property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAuthor(String value) {
-        this.author = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Gets the value of the title property.
+     * Gets the value of the company property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTitle() {
-        return title;
+    public String getCompany() {
+        return company;
     }
 
     /**
-     * Sets the value of the title property.
+     * Sets the value of the company property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTitle(String value) {
-        this.title = value;
+    public void setCompany(String value) {
+        this.company = value;
     }
 
     /**
-     * Gets the value of the subject property.
+     * Gets the value of the phone property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getSubject() {
-        return subject;
+    public int getPhone() {
+        return phone;
     }
 
     /**
-     * Sets the value of the subject property.
+     * Sets the value of the phone property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setSubject(String value) {
-        this.subject = value;
+    public void setPhone(int value) {
+        this.phone = value;
     }
 
 }
