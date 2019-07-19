@@ -4,7 +4,28 @@ basepath:/v1
 title:Demo
 path:/userdetails
 
+class:Contact
+	 	 	 Parameters:
+	 	 	 	 name:name
+	 	 	 	 type:String
+
+	 	 	 	 name:company
+	 	 	 	 type:String
+
+	 	 	 	 name:phone
+	 	 	 	 type:int
+
+paths:
+Contact:
+	 	 	 post:
+paths:
+summary: Add a newContact to the store
+operationId: addContact
+produces:
+  - application/json
+
 class:Book
+	 	 	 Parameters:
 	 	 	 	 name:author
 	 	 	 	 type:String
 
@@ -14,13 +35,12 @@ class:Book
 	 	 	 	 name:subject
 	 	 	 	 type:String
 
-class:Contact
-	 	 	 	 name:name
-	 	 	 	 type:String
-
-	 	 	 	 name:company
-	 	 	 	 type:String
-
-	 	 	 	 name:phone
-	 	 	 	 type:int
+paths:
+Book:
+	 	 	 post:
+paths:
+summary: Add a newBook to the store
+operationId: addBook
+produces:
+  - application/json
 
